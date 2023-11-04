@@ -81,18 +81,14 @@ const RegisterForm = () => {
   const loginStatus = useSelector((state) => state.login);
 
   const isUsernameValid = (username) => {
-    // Validate username format here (e.g., requires both first name and last name)
-    const nameRegex = /^[A-Za-z]+\s[A-Za-z]+$/; // Assumes first name and last name are separated by a space
+    const nameRegex = /^[A-Za-z]+\s[A-Za-z]+$/; 
     return nameRegex.test(username);
   };
 
   const isPasswordValid = (password) => {
-    // Validate password format here (e.g., at least 8 characters, one uppercase, one lowercase, one digit, one special character)
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
     return passwordRegex.test(password);
   };
-
-  // Add your role_id validation logic if needed
 
   const handleRegister = async () => {
     setRegisterProcessing(true);
@@ -105,7 +101,6 @@ const RegisterForm = () => {
           navigate('/success');
         }
       } catch (error) {
-        // Handle errors here
       }
     } else {
       alert('Please enter a valid username and password format.');
@@ -125,7 +120,7 @@ const RegisterForm = () => {
           navigate('/success');
         }
       } catch (error) {
-        // Handle errors here
+        
       }
     } else {
       alert('Please enter a valid username and password format.');
